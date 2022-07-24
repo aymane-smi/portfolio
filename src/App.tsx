@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext } from 'react';
 import './App.css';
+import Input from './components/Input';
+import { Outputs } from './components/Outputs';
+import { TerminalContext } from './context/terminal.context';
 
 function App() {
+  const terminalContext = useContext(TerminalContext);
+  console.log(terminalContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+    <main className='w-[100vw] font-dejavu '>
+      <Outputs />
+      <section>
+        <p className="font-dejavu text-[#64e986] font-extrabold font-12 absolute">
+          aymane@aymane
+          <span className="text-white">:</span>
+          <span className="text-blue-400">~/portfolio</span>
+          <span className='text-white'>$</span>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Input />
+      </section>
+    </main>
   );
 }
 
